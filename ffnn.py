@@ -19,7 +19,7 @@ class FFNN(nn.Module):
     def __init__(self, input_dim, h):
         super(FFNN, self).__init__()
         self.h = h
-        self.W1 = nn.Linear(input_dim, h)
+        self.W1 = nn.Linear(input_dim, h)  
         self.activation = nn.ReLU() # The rectified linear unit; one valid choice of activation function
         self.output_dim = 5
         self.W2 = nn.Linear(h, self.output_dim)
@@ -30,12 +30,18 @@ class FFNN(nn.Module):
     def compute_Loss(self, predicted_vector, gold_label):
         return self.loss(predicted_vector, gold_label)
 
+
     def forward(self, input_vector):
-        # [to fill] obtain first hidden layer representation
+        # obtain first hidden layer representation
+        hidden_rep = self.W1(input_vector)                      # hidden_rep = W1x + b (input*weight matrix + bias)
+        hidden_rep = self.activation(hidden_rep)                # apply the activation ==> applies ReLU ==> ReLU(x) = max(0, x)
+        
+        # obtain output layer representation
+        output_rep = self.W2(hidden_rep)                        # maps hidden_rep to the output space
 
-        # [to fill] obtain output layer representation
-
-        # [to fill] obtain probability dist.
+        # obtain probability dist.
+        predicted_vector = self.softmax(output_rep)             # converts raw scores into log probabilities
+                                                                # higher value ==> more likely
 
         return predicted_vector
 
