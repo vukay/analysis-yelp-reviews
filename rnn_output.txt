@@ -1,0 +1,134 @@
+model,hidden_dim,epochs,epoch,training_accuracy,validation_accuracy
+FFNN,64,5,1,0.4115,0.41125
+FFNN,64,5,2,0.419125,0.42875
+FFNN,64,5,3,0.43025,0.42625
+
+python rnn.py --hidden_dim 64 --epochs 5 --train_data training.json --val_data validation.json --do_train
+========== Loading data ==========
+========== Vectorizing data ==========
+Training started for epoch 1
+  0%|                                      | 0/500 [00:00<?, ?it/s]rnn.py:122: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\utils\tensor_new.cpp:281.)
+  vectors = torch.tensor(vectors).view(len(vectors), 1, -1)
+100%|████████████████████████████| 500/500 [04:13<00:00,  1.97it/s]
+tensor(1.0876)
+Training completed for epoch 1
+Training accuracy for epoch 1: 0.4115
+Validation started for epoch 1
+100%|████████████████████████████| 800/800 [00:10<00:00, 77.48it/s]
+Validation completed for epoch 1
+Validation accuracy for epoch 1: 0.41125
+Training started for epoch 2
+100%|████████████████████████████| 500/500 [05:26<00:00,  1.53it/s]
+tensor(1.0846)
+Training completed for epoch 2
+Training accuracy for epoch 2: 0.419125
+Validation started for epoch 2
+100%|████████████████████████████| 800/800 [00:10<00:00, 75.72it/s]
+Validation completed for epoch 2
+Validation accuracy for epoch 2: 0.42875
+Training started for epoch 3
+100%|████████████████████████████| 500/500 [05:31<00:00,  1.51it/s]
+tensor(1.0777)
+Training completed for epoch 3
+Training accuracy for epoch 3: 0.43025
+Validation started for epoch 3
+100%|████████████████████████████| 800/800 [00:09<00:00, 81.22it/s]
+Validation completed for epoch 3
+Validation accuracy for epoch 3: 0.42625
+Training done to avoid overfitting!
+Best validation accuracy is: 0.42875
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+model,hidden_dim,epochs,epoch,training_accuracy,validation_accuracy
+RNN,128,5,1,0.395125,0.4
+RNN,128,5,2,0.392625,0.40125
+RNN,128,5,3,0.3895,0.3925
+RNN,128,5,4,0.395,0.41875
+
+python rnn.py --hidden_dim 128 --epochs 5 --train_data training.json --val_data validation
+.json --do_train
+========== Loading data ==========
+========== Vectorizing data ==========
+Training started for epoch 1
+  0%|                                      | 0/500 [00:00<?, ?it/s]rnn.py:122: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\utils\tensor_new.cpp:281.)
+  vectors = torch.tensor(vectors).view(len(vectors), 1, -1)
+100%|████████████████████████████| 500/500 [08:08<00:00,  1.02it/s]
+tensor(1.1442)
+Training completed for epoch 1
+Training accuracy for epoch 1: 0.395125
+Validation started for epoch 1
+100%|████████████████████████████| 800/800 [00:09<00:00, 84.15it/s] 
+Validation completed for epoch 1
+Validation accuracy for epoch 1: 0.4
+Training started for epoch 2
+100%|████████████████████████████| 500/500 [04:29<00:00,  1.86it/s] 
+tensor(1.1361)
+Training completed for epoch 2
+Training accuracy for epoch 2: 0.392625
+Validation started for epoch 2
+100%|████████████████████████████| 800/800 [00:09<00:00, 85.91it/s] 
+Validation completed for epoch 2
+Validation accuracy for epoch 2: 0.40125
+Training started for epoch 3
+100%|████████████████████████████| 500/500 [04:23<00:00,  1.90it/s] 
+tensor(1.1490)
+Training completed for epoch 3
+Training accuracy for epoch 3: 0.3895
+Validation started for epoch 3
+100%|████████████████████████████| 800/800 [00:09<00:00, 80.38it/s] 
+Validation completed for epoch 3
+Validation accuracy for epoch 3: 0.3925
+Training started for epoch 4
+100%|████████████████████████████| 500/500 [04:51<00:00,  1.71it/s] 
+tensor(1.1191)
+Training completed for epoch 4
+Training accuracy for epoch 4: 0.395
+Validation started for epoch 4
+100%|████████████████████████████| 800/800 [00:09<00:00, 86.89it/s] 
+Validation completed for epoch 4
+Validation accuracy for epoch 4: 0.41875
+Training started for epoch 5
+100%|████████████████████████████| 500/500 [10:51<00:00,  1.30s/it] 
+tensor(1.1045)
+Training completed for epoch 5
+Training accuracy for epoch 5: 0.4055
+Validation started for epoch 5
+100%|████████████████████████████| 800/800 [00:09<00:00, 88.82it/s] 
+Validation completed for epoch 5
+Validation accuracy for epoch 5: 0.3925
+Training done to avoid overfitting!
+Best validation accuracy is: 0.41875
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+model,hidden_dim,epochs,epoch,training_accuracy,validation_accuracy
+RNN,256,5,1,0.382625,0.44625
+RNN,256,5,2,0.389625,0.4
+
+rnn.py --hidden_dim 256 --epochs 5 --train_data training.json --val_data validation
+.json --do_train
+========== Loading data ==========
+========== Vectorizing data ==========
+Training started for epoch 1
+  0%|                                      | 0/500 [00:00<?, ?it/s]rnn.py:122: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\torch\csrc\utils\tensor_new.cpp:281.)
+  vectors = torch.tensor(vectors).view(len(vectors), 1, -1)
+100%|████████████████████████████| 500/500 [11:27<00:00,  1.37s/it]
+tensor(1.2587)
+Training completed for epoch 1
+Training accuracy for epoch 1: 0.382625
+Validation started for epoch 1
+100%|████████████████████████████| 800/800 [00:23<00:00, 34.04it/s] 
+Validation completed for epoch 1
+Validation accuracy for epoch 1: 0.44625
+Training started for epoch 2
+100%|████████████████████████████| 500/500 [11:57<00:00,  1.44s/it] 
+tensor(1.2123)
+Training completed for epoch 2
+Training accuracy for epoch 2: 0.389625
+Validation started for epoch 2
+100%|████████████████████████████| 800/800 [00:10<00:00, 77.19it/s] 
+Validation completed for epoch 2
+Validation accuracy for epoch 2: 0.4
+Training done to avoid overfitting!
+Best validation accuracy is: 0.44625

@@ -174,7 +174,7 @@ if __name__ == "__main__":
         with open("results_rnn.csv", "a") as f:                 # make sure that other outputs are appended to csv file (won't overwrite previous data)
             if not file_exists:
                 f.write("model,hidden_dim,epochs,epoch,training_accuracy,validation_accuracy\n")                    # header
-            f.write(f"FFNN,{args.hidden_dim},{args.epochs},{epoch+1},{trainning_accuracy},{validation_accuracy}\n")
+            f.write(f"RNN,{args.hidden_dim},{args.epochs},{epoch+1},{trainning_accuracy},{validation_accuracy}\n")
 
         if validation_accuracy < last_validation_accuracy and trainning_accuracy > last_train_accuracy:
             stopping_condition=True
