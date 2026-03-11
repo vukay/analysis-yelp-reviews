@@ -1,0 +1,187 @@
+model,hidden_dim,epochs,epoch,validation_accuracy
+FFNN,64,5,1,0.54375
+FFNN,64,5,2,0.58375
+FFNN,64,5,3,0.59375
+FFNN,64,5,4,0.54
+FFNN,64,5,5,0.5975
+
+python ffnn.py --hidden_dim 64 --epochs 5 --train_data training.json --val_data validation.json --do_train
+========== Loading data ==========
+========== Vectorizing data ==========
+========== Training for 5 epochs ==========
+Training started for epoch 1
+100%|████████████████████████████| 500/500 [01:31<00:00,  5.45it/s] 
+Training completed for epoch 1
+Training accuracy for epoch 1: 0.534625
+Training time for this epoch: 91.75635242462158
+Validation started for epoch 1
+100%|██████████████████████████████| 50/50 [00:02<00:00, 18.31it/s] 
+Validation completed for epoch 1
+Validation accuracy for epoch 1: 0.54375
+Validation time for this epoch: 2.735147476196289
+Training started for epoch 2
+100%|████████████████████████████| 500/500 [01:35<00:00,  5.22it/s]
+Training completed for epoch 2
+Training accuracy for epoch 2: 0.581875
+Training time for this epoch: 95.85482025146484
+Validation started for epoch 2
+100%|██████████████████████████████| 50/50 [00:02<00:00, 21.64it/s] 
+Validation completed for epoch 2
+Validation accuracy for epoch 2: 0.58375
+Validation time for this epoch: 2.3114688396453857
+Training started for epoch 3
+100%|████████████████████████████| 500/500 [01:44<00:00,  4.78it/s]
+Training completed for epoch 3
+Training accuracy for epoch 3: 0.618125
+Training time for this epoch: 104.71052312850952
+Validation started for epoch 3
+100%|██████████████████████████████| 50/50 [00:01<00:00, 31.60it/s] 
+Validation completed for epoch 3
+Validation accuracy for epoch 3: 0.59375
+Validation time for this epoch: 1.5837347507476807
+Training started for epoch 4
+100%|████████████████████████████| 500/500 [01:50<00:00,  4.54it/s]
+Training completed for epoch 4
+Training accuracy for epoch 4: 0.647125
+Training time for this epoch: 110.0664050579071
+Validation started for epoch 4
+100%|██████████████████████████████| 50/50 [00:02<00:00, 20.07it/s] 
+Validation completed for epoch 4
+Validation accuracy for epoch 4: 0.54
+Validation time for this epoch: 2.4943995475769043
+Training started for epoch 5
+100%|████████████████████████████| 500/500 [02:00<00:00,  4.15it/s]
+Training completed for epoch 5
+Training accuracy for epoch 5: 0.65775
+Training time for this epoch: 120.37461519241333
+Validation started for epoch 5
+100%|██████████████████████████████| 50/50 [00:02<00:00, 19.98it/s] 
+Validation completed for epoch 5
+Validation accuracy for epoch 5: 0.5975
+Validation time for this epoch: 2.506098508834839
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+model,hidden_dim,epochs,epoch,validation_accuracy
+FFNN,128,5,1,0.5425
+FFNN,128,5,2,0.59375
+FFNN,128,5,3,0.5875
+FFNN,128,5,4,0.56875
+FFNN,128,5,5,0.605
+
+python ffnn.py --hidden_dim 128 --epochs 5 --train_data training.json --val_data validation.json --do_train
+========== Loading data ==========
+========== Vectorizing data ==========
+========== Training for 5 epochs ==========
+Training started for epoch 1
+100%|████████████████████████████| 500/500 [01:28<00:00,  5.65it/s] 
+Training completed for epoch 1
+Training accuracy for epoch 1: 0.530125
+Training time for this epoch: 88.52085566520691
+Validation started for epoch 1
+100%|██████████████████████████████| 50/50 [00:02<00:00, 17.08it/s] 
+Validation completed for epoch 1
+Validation accuracy for epoch 1: 0.5425
+Validation time for this epoch: 2.9299755096435547
+Training started for epoch 2
+100%|████████████████████████████| 500/500 [01:26<00:00,  5.78it/s]
+Training completed for epoch 2
+Training accuracy for epoch 2: 0.585875
+Training time for this epoch: 86.54282450675964
+Validation started for epoch 2
+100%|██████████████████████████████| 50/50 [00:02<00:00, 17.20it/s] 
+Validation completed for epoch 2
+Validation accuracy for epoch 2: 0.59375
+Validation time for this epoch: 2.9073846340179443
+Training started for epoch 3
+100%|████████████████████████████| 500/500 [01:30<00:00,  5.50it/s]
+Training completed for epoch 3
+Training accuracy for epoch 3: 0.614125
+Training time for this epoch: 90.93520259857178
+Validation started for epoch 3
+100%|██████████████████████████████| 50/50 [00:02<00:00, 17.94it/s] 
+Validation completed for epoch 3
+Validation accuracy for epoch 3: 0.5875
+Validation time for this epoch: 2.787828207015991
+Training started for epoch 4
+100%|████████████████████████████| 500/500 [02:33<00:00,  3.25it/s] 
+Training completed for epoch 4
+Training accuracy for epoch 4: 0.63975
+Training time for this epoch: 153.96187496185303
+Validation started for epoch 4
+100%|██████████████████████████████| 50/50 [00:04<00:00, 10.84it/s] 
+Validation completed for epoch 4
+Validation accuracy for epoch 4: 0.56875
+Validation time for this epoch: 4.614224910736084
+Training started for epoch 5
+100%|████████████████████████████| 500/500 [03:13<00:00,  2.58it/s]
+Training completed for epoch 5
+Training accuracy for epoch 5: 0.66275
+Training time for this epoch: 193.88692045211792
+Validation started for epoch 5
+100%|██████████████████████████████| 50/50 [00:03<00:00, 12.52it/s] 
+Validation completed for epoch 5
+Validation accuracy for epoch 5: 0.605
+Validation time for this epoch: 3.997093439102173
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+model,hidden_dim,epochs,epoch,validation_accuracy
+FFNN,256,5,1,0.53625
+FFNN,256,5,2,0.58375
+FFNN,256,5,3,0.575
+FFNN,256,5,4,0.57625
+FFNN,256,5,5,0.57875
+
+python ffnn.py --hidden_dim 256 --epochs 5 --train_data training.json --val_data validation.json --do_train
+========== Loading data ==========
+========== Vectorizing data ==========
+========== Training for 5 epochs ==========
+Training started for epoch 1
+100%|████████████████████████████| 500/500 [03:32<00:00,  2.35it/s]
+Training completed for epoch 1
+Training accuracy for epoch 1: 0.533625
+Training time for this epoch: 212.52381801605225
+Validation started for epoch 1
+100%|██████████████████████████████| 50/50 [00:06<00:00,  7.97it/s] 
+Validation completed for epoch 1
+Validation accuracy for epoch 1: 0.53625
+Validation time for this epoch: 6.2803425788879395
+Training started for epoch 2
+100%|████████████████████████████| 500/500 [03:46<00:00,  2.21it/s]
+Training completed for epoch 2
+Training accuracy for epoch 2: 0.581125
+Training time for this epoch: 226.46463322639465
+Validation started for epoch 2
+100%|██████████████████████████████| 50/50 [00:05<00:00,  8.68it/s] 
+Validation completed for epoch 2
+Validation accuracy for epoch 2: 0.58375
+Validation time for this epoch: 5.763427972793579
+Training started for epoch 3
+100%|████████████████████████████| 500/500 [03:32<00:00,  2.35it/s]
+Training completed for epoch 3
+Training accuracy for epoch 3: 0.621
+Training time for this epoch: 212.67948246002197
+Validation started for epoch 3
+100%|██████████████████████████████| 50/50 [00:02<00:00, 19.25it/s] 
+Validation completed for epoch 3
+Validation accuracy for epoch 3: 0.575
+Validation time for this epoch: 2.5999741554260254
+Training started for epoch 4
+100%|████████████████████████████| 500/500 [04:33<00:00,  1.83it/s]
+Training completed for epoch 4
+Training accuracy for epoch 4: 0.6495
+Training time for this epoch: 273.5464382171631
+Validation started for epoch 4
+100%|██████████████████████████████| 50/50 [00:06<00:00,  7.89it/s] 
+Validation completed for epoch 4
+Validation accuracy for epoch 4: 0.57625
+Validation time for this epoch: 6.341881513595581
+Training started for epoch 5
+100%|████████████████████████████| 500/500 [04:47<00:00,  1.74it/s]
+Training completed for epoch 5
+Training accuracy for epoch 5: 0.656375
+Training time for this epoch: 287.23546719551086
+Validation started for epoch 5
+100%|██████████████████████████████| 50/50 [00:05<00:00,  8.34it/s] 
+Validation completed for epoch 5
+Validation accuracy for epoch 5: 0.57875
+Validation time for this epoch: 6.0009026527404785

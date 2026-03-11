@@ -24,7 +24,8 @@ class FFNN(nn.Module):
         self.output_dim = 5
         self.W2 = nn.Linear(h, self.output_dim)
 
-        self.softmax = nn.LogSoftmax() # The softmax function that converts vectors into probability distributions; computes log probabilities for computational benefits
+        # note: got a user warning --> just changed to remove warning
+        self.softmax = nn.LogSoftmax(dim=0) # The softmax function that converts vectors into probability distributions; computes log probabilities for computational benefits
         self.loss = nn.NLLLoss() # The cross-entropy/negative log likelihood loss taught in class
 
     def compute_Loss(self, predicted_vector, gold_label):
@@ -185,9 +186,19 @@ if __name__ == "__main__":
                 else:
                     loss += example_loss
             loss = loss / minibatch_size
+        validation_accuracy = correct/total         # for our results.csv later
         print("Validation completed for epoch {}".format(epoch + 1))
-        print("Validation accuracy for epoch {}: {}".format(epoch + 1, correct / total))
+        print("Validation accuracy for epoch {}: {}".format(epoch + 1, validation_accuracy))    # replaced correct/total with equiv. validation_accuracy variable
         print("Validation time for this epoch: {}".format(time.time() - start_time))
+        
+        # write out to results/test.out
+        # saving results of training in csv file ==> to keep track of ALL the outputs (not just the final epoch)
+        file_exists = os.path.isfile("results_ffnn.csv")
+        with open("results_ffnn.csv", "a") as f:                 # make sure that other outputs are appended to csv file (won't overwrite previous data)
+            if not file_exists:
+                f.write("model,hidden_dim,epochs,epoch,validation_accuracy\n")            # header
+            f.write(f"FFNN,{args.hidden_dim},{args.epochs},{epoch+1},{validation_accuracy}\n")
 
-    # write out to results/test.out
+    
+    
     
