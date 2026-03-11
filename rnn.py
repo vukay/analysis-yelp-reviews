@@ -30,13 +30,17 @@ class RNN(nn.Module):
         return self.loss(predicted_vector, gold_label)
 
     def forward(self, inputs):
-        # [to fill] obtain hidden layer representation (https://pytorch.org/docs/stable/generated/torch.nn.RNN.html)
-        _, hidden = 
-        # [to fill] obtain output layer representations
-
-        # [to fill] sum over output 
-
-        # [to fill] obtain probability dist.
+        # obtain hidden layer representation (https://pytorch.org/docs/stable/generated/torch.nn.RNN.html)
+        output, hidden = self.rnn(inputs)       # passing seq of word vectors through RNN
+        
+        # obtain output layer representations
+        hidden = hidden[-1]                     # remove layer dim ==> (batch_size, hidden_dim)
+        
+        # sum over output 
+        output_rep = self.W(hidden)             
+        
+        # obtain probability dist.
+        predicted_vector = self.softmax(output_rep)    # converts raw scores into log probabilities
 
         return predicted_vector
 
@@ -142,7 +146,6 @@ if __name__ == "__main__":
         print("Training accuracy for epoch {}: {}".format(epoch + 1, correct / total))
         trainning_accuracy = correct/total
 
-
         model.eval()
         correct = 0
         total = 0
@@ -165,6 +168,13 @@ if __name__ == "__main__":
         print("Validation completed for epoch {}".format(epoch + 1))
         print("Validation accuracy for epoch {}: {}".format(epoch + 1, correct / total))
         validation_accuracy = correct/total
+        
+        # saving results of training in csv file ==> to keep track of ALL the outputs (not just the final epoch)
+        file_exists = os.path.isfile("results_rnn.csv")
+        with open("results_rnn.csv", "a") as f:                 # make sure that other outputs are appended to csv file (won't overwrite previous data)
+            if not file_exists:
+                f.write("model,hidden_dim,epochs,epoch,training_accuracy,validation_accuracy\n")                    # header
+            f.write(f"FFNN,{args.hidden_dim},{args.epochs},{epoch+1},{trainning_accuracy},{validation_accuracy}\n")
 
         if validation_accuracy < last_validation_accuracy and trainning_accuracy > last_train_accuracy:
             stopping_condition=True
@@ -176,8 +186,5 @@ if __name__ == "__main__":
 
         epoch += 1
 
-
-
     # You may find it beneficial to keep track of training accuracy or training loss;
-
     # Think about how to update the model and what this entails. Consider ffnn.py and the PyTorch documentation for guidance
